@@ -17,7 +17,7 @@ class Question extends Model
 
     //ignora la regla de arriba y agarra todo como venga
     //protected $guarded = []
-    
+
     public function user(){
         return $this->belongsTo(User::class);
     }
