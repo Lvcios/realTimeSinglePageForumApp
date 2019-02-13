@@ -10,7 +10,7 @@ class LikeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('JWT']);
+        $this->middleware('JWT');
     }
 
     public function likeIt(Reply $reply){
