@@ -11,7 +11,11 @@ window.Vue = require('vue');
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 
+
 Vue.use(Vuetify)
+
+import User from './Helpers/User'
+window.User = User
 
 /**
  * The following block of code may be used to automatically register your
@@ -26,8 +30,12 @@ Vue.use(Vuetify)
 
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default); //eliminado
+
 Vue.component('AppHome', require('./components/AppHome.vue').default);
 import router from './router/router.js'
+
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
