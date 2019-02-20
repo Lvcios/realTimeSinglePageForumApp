@@ -16,6 +16,10 @@
         <router-link to="login">
             <v-btn flat>Login</v-btn>
         </router-link>
+
+        <router-link to="signup">
+            <v-btn flat>Sign Up</v-btn>
+        </router-link>
     </div>
   </v-toolbar>
 </template>
