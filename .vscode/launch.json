@@ -5,10 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "type": "chrome",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/resources\\js\\Helpers\\User.js"
+            "name": "Chrome",
+            "url": "http://127.0.0.1:8000",
+            "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
+            "trace" : true,
+            "sourceMapPathOverrides": {
+                "*": "${webRoot}/*"
+              },
+            "breakOnLoad": true
         }
     ]
 }
