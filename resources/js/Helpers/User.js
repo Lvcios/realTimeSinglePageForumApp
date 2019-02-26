@@ -13,6 +13,7 @@ class User {
         const userName = res.data.user
         if(Token.isValid(access_token)){
             AppStore.store(userName, access_token)
+            window.location = '/forum'
         }
     }
 
@@ -25,11 +26,13 @@ class User {
     }
 
     loggedIn(){
+
         return this.hasToken()
     }
 
     logout(){
         AppStore.clear()
+        window.location = '/forum'
     }
 
     name(){

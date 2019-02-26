@@ -1,35 +1,43 @@
 <template>
-  <v-container>
-    <v-form @submit.prevent="login">
-      <v-container>
-        <v-text-field v-model="form.email" label="E-mail" type="email" required></v-text-field>
-          <v-text-field v-model="form.password" label="Password" type="password" required></v-text-field>
-          <v-btn color="green" type="submit">Login</v-btn>
-          <router-link to="signup">
-            <v-btn color="blue">Sign Up</v-btn>
-        </router-link>
-      </v-container>
-    </v-form>
-  </v-container>
+    <v-container>
+        <v-form @submit.prevent="login">
+            <v-container>
+                <v-text-field v-model="form.email" label="E-mail" type="email" required></v-text-field>
+                <v-text-field v-model="form.password" label="Password" type="password" required></v-text-field>
+                <v-btn color="green" type="submit">Login</v-btn>
+                <router-link to="signup">
+                    <v-btn color="blue">Sign Up</v-btn>
+                </router-link>
+            </v-container>
+        </v-form>
+    </v-container>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      form: {
-        email: null,
-        password: null
-      }
+    export default {
+        data() {
+            return {
+                form: {
+                    email: null,
+                    password: null
+                }
+            };
+        },
+        created(){
+            if(User.loggedIn()){
+                this.$router.push({
+                        path: 'forum'
+                    })
+            }
+        },
+        methods: {
+            login() {
+                User.login(this.form)
+            }
+        }
     };
-  },
-  methods:{
-      login(){
-          User.login(this.form)
-      }
-  }
-};
 </script>
 
 <style>
+
 </style>
